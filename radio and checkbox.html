@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>radio and checkbox</title>
+	<style>
+	input[type=radio],input[type=checkbox]{
+		visibility: hidden;
+	}
+	#radio+label{
+		display: block;
+		position: relative;
+		width: 20px;
+		height: 20px;
+		border-radius: 50%;
+		border: solid 1px #ccc;
+		vertical-align: middle;
+	}
+	#checkbox+label{
+		display: block;
+		position: relative;
+		width: 20px;
+		height: 20px;
+		border: solid 1px #ccc;
+		vertical-align: middle;
+	}
+	#radio:checked+label,#checkbox:checked+label{
+		border-color: purple;
+	}
+	#radio:checked+label::after{
+		content: '';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 10px;
+		height: 10px;
+		margin-top: -5px;
+		margin-left: -5px;
+		border-radius: 50%;
+		background-color: purple;
+	}
+	#checkbox:checked+label::after{
+		content:'\2714';
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-top: -11px;
+		margin-left: -6px;
+		color: purple;
+	}
+	</style>
+</head>
+<body>
+	<div class="radio">
+		<input type="radio" value="1" id="radio" name="">
+		<label for="radio"></label>
+	</div>
+	<div class="checkbox">
+		<input type="checkbox" id="checkbox" name="">
+		<label for="checkbox"></label>
+	</div>
+</body>
+</html>
